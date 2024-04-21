@@ -1,0 +1,94 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div>
+        </div>
+        <script>
+            // class employee {
+            //     constructor (empName) {
+            //         this.emp = empName;
+            //         console.log("main constructor call " + this.emp);
+            //     }
+
+            //     Info (){
+            //         console.log("emp name : " + this.emp);
+            //     }
+            // }
+
+            // class manager extends employee {
+            //     // constructor(name){
+            //     //     super();
+            //     //     //console.log("manager calls " + name);
+            //     // }
+
+            //     Info (){
+            //         super.Info();
+            //         console.log("manager name : " + this.emp);
+            //     }
+            // }
+
+            // let newEmp = new employee("ram");
+            // let newManager = new manager("hari");
+            // newManager.Info();
+
+
+            class employee {
+               constructor(name, age, salary, Contact, address){
+                this.empName = name;
+                this.empAge = age;
+                this.empSalary = salary;
+                this.hrContact = Contact;
+                this.hrAddress = address;
+                console.log("main constructor call");
+               }
+
+               info() {
+                    document.write(`<h3>employee class </h3> employee name: ${this.empName}</br>
+                        age: ${this.empAge} </br>
+                        salary: ${this.empSalary}`)
+               }
+            }
+
+            class manager extends employee{
+                info() {
+                    let bonus = 1000;
+                    let callallounce = 1000;
+                    let totalallounce = this.empSalary + bonus + callallounce;
+                    
+                document.write(`<h3>manager class </h3> 
+                    name: ${this.empName}</br>
+                    age: ${this.empAge} </br>
+                    salary: ${totalallounce }`)
+               }
+
+            }
+
+            class hr extends manager {
+                info () {
+                    document.write(`<h3>HR class </h3> 
+                        name: ${this.empName}</br>
+                        age: ${this.empAge} </br>
+                        salary: ${this.empSalary } </br>
+                        contact: ${this.hrContact }</br>
+                        address: ${this.hrAddress}`)
+                    
+                }
+            }
+
+            let emp = new employee("ram", 29, 20000);
+            emp.info();
+
+            let man = new manager("hari", 40, 20000);
+            man.info();
+
+            let hr1 = new hr("ravi", 49, 80000, 6789877678, "tokyo");
+            hr1.info();
+
+            let hr2 = new hr("smriti", 32, 5000, 6778843534, "kanagawa");
+            hr2.info();
+        </script>
+    </body>
+</html>

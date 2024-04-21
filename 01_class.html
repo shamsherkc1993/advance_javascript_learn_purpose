@@ -1,0 +1,65 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <div>
+            <p>Hello JS</p>
+        </div>
+        <script>
+            //class has properties and methods
+            //class can have multiple methods
+
+            //create class and define method message()
+            //methods are of three types: 1. constructor 2. prototype 3. static
+            class message{
+                message(){
+                    console.log("hello js")
+                }
+
+                sorry(){
+                    console.log("hello js, i am sorry")
+                }
+            }
+
+            // let a = new message;
+            // a.message();
+            // a.sorry();
+
+            //1. ------ constructor ----------------
+            class student{
+                constructor(name, age){
+                    this.studentname = name;
+                    this.studentage = age;
+
+                    console.log("constructor caslls")
+                }
+
+                hello(){
+                    console.log("hello " + this.studentname + "your age is " + this.studentage) 
+                }
+
+                // static function don't need object to call, it can be called by class name and functionname
+                static staticMethod(){
+                    console.log("static function caslls")
+
+                }
+
+            }
+
+
+            let newStudent = new student("shamsher", 49);
+            let newStudent2 = new student("ram", 20);
+
+
+            newStudent.hello();
+            newStudent2.hello();
+            student.staticMethod();
+
+
+
+
+        </script>
+    </body>
+</html>
